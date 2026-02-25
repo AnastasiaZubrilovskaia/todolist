@@ -1,0 +1,9 @@
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    status_id INTEGER NOT NULL REFERENCES status(id) DEFAULT 1,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    deadline TIMESTAMP NOT NULL
+);
