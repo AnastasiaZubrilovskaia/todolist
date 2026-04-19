@@ -23,7 +23,7 @@ public class AuthService {
 
     public String register(RegisterRequest request) {
         if (userRepository.existsByLogin(request.getLogin())) {
-            throw new ConflictException("User already exists");
+            throw new ConflictException("User already exists...");
         }
 
         User user = new User();
