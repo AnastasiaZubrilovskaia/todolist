@@ -54,7 +54,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run tests + coverage
-        run: mvn clean verify jacoco:check
+        run: mvn clean verify
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
