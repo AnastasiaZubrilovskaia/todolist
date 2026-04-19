@@ -1,6 +1,7 @@
 FROM maven:3.9.12-eclipse-temurin-21 AS build
 WORKDIR /todolist
 COPY pom.xml .
+COPY checkstyle.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
