@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class StatusService {
     private final StatusRepository statusRepository;
 
-    public Status getStatusById(Integer id){
+    public Status getStatusById(Integer id) {
         return statusRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Status not found"));
     }

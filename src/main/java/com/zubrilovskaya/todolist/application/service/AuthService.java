@@ -18,6 +18,7 @@ import java.util.UUID;
 public class AuthService {
 
     private final UserRepository userRepository;
+
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public String register(RegisterRequest request) {
@@ -58,7 +59,7 @@ public class AuthService {
                 .orElseThrow(() -> new UnauthorizedException("Invalid token"));
     }
 
-    public void logout(String token){
+    public void logout(String token) {
         User user = userRepository.findByToken(token)
                 .orElseThrow(() -> new UnauthorizedException("Invalid token"));
         user.setToken(null);

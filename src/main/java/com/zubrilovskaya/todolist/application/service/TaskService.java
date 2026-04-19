@@ -18,7 +18,9 @@ import java.util.List;
 public class TaskService {
 
     private final TaskRepository taskRepository;
+
     private final UserRepository userRepository;
+
     private final StatusService statusService;
 
     @Transactional

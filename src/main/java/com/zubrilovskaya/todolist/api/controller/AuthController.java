@@ -17,7 +17,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request){
+    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request) {
         String token = authService.register(request);
         UserResponse response = new UserResponse();
         response.setToken(token);
