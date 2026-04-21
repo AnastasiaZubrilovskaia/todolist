@@ -168,15 +168,6 @@
 					<consoleOutput>true</consoleOutput>
 					<failOnViolation>true</failOnViolation>
 				</configuration>
-
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

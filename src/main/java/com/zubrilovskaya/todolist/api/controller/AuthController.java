@@ -17,7 +17,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request) {
+    public ResponseEntity<UserResponse> register(@RequestBody @Valid RegisterRequest request){
         String token = authService.register(request);
         UserResponse response = new UserResponse();
         response.setToken(token);
@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request) {
+    public ResponseEntity<UserResponse> login(@RequestBody @Valid LoginRequest request){
         String token = authService.login(request);
         UserResponse response = new UserResponse();
         response.setToken(token);
@@ -35,7 +35,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<Void> logout(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<Void> logout(@RequestHeader("Authorization") String authHeader){
         String token = authHeader.replace("Bearer ", "");
         authService.logout(token);
         return ResponseEntity.noContent().build();
